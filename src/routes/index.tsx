@@ -1,12 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
 function Index() {
-  return <div className="min-h-screen bg-background" />;
+  return (
+    <main className="neon-landing">
+      <div className="neon-orb neon-orb-one" aria-hidden="true" />
+      <div className="neon-orb neon-orb-two" aria-hidden="true" />
+      <section className="neon-content">
+        <span className="neon-eyebrow">PROJETO ATUALIZADO</span>
+        <h1 className="neon-title">
+          Funcionou editar um projeto já publicado na Lova.
+        </h1>
+        <div className="neon-divider" aria-hidden="true" />
+      </section>
+      <span className="neon-footer">EDIÇÃO • PUBLICAÇÃO • RESULTADO</span>
+    </main>
+  );
 }
